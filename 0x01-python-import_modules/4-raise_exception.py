@@ -1,3 +1,7 @@
 #!/usr/bin/python3
+
+
 def raise_exception():
-	    raise TypeError
+    my_string = "the string"
+    new_string = my_string * 1.5
+    print(new_string)
