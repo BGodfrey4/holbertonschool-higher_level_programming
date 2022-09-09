@@ -4,6 +4,7 @@
 
 class Square:
     """A simple Square class that specifies the square by the size.
+    
     Attributes:
         __size (int): Is the size of the square.
     """
