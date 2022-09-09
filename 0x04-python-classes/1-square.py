@@ -16,7 +16,7 @@ class Square:
 
     def area(self):
         """Will find the area of the square.
-        
+
         Returns:
             int : Is just the area of the square.
         """
