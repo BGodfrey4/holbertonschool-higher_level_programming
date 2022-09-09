@@ -1,24 +1,13 @@
 #!/usr/bin/python3
-"""A simple Square class that specifies a square by the size."""
+""" will write the class square"""
 
 
 class Square:
-    """A simple Square class that specifies the square by the size.
+    """will attempt to model the square"""
 
-    Attributes:
-        __size (int): Is the size of the square.
-    """
-    def __init__(self, size=0):
+    def __init__(self, size=0):  # then the instantiation happens here
         if type(size) != int:
-            raise TypeError("size is always an integer")
+            raise TypeError("is just the size must be an integer")
         if size < 0:
-            raise ValueError("size is always >= 0")
+            raise ValueError("is the size must be >= 0")
         self.__size = size
-
-    def area(self):
-        """Will find the area of the square.
-
-        Returns:
-            int : Is just the area of the square.
-        """
-        return self.__size ** 2
