@@ -1,19 +1,30 @@
 #!/usr/bin/python3
-class Square:
-    """Represents a square.
-    Private instance attribute: size.
-    Instantiation with optional size.
-    Public instance method: def area(self).
-    """
+""" writes a class square"""
 
-    def __init__(self, size=0):
-        """Initializes the data."""
-        if not isinstance(size, int):
+
+class Square:
+    """attempt to model a square"""
+
+    def __init__(self, size=0):  # instantiation happens here
+        if type(size) != int:
             raise TypeError("size must be an integer")
-        elif size < 0:
+        if size < 0:
             raise ValueError("size must be >= 0")
-        self.__size = size
+        else:
+            self.__size = size
 
     def area(self):
-        """Returns the current square area."""
-        return self.__size ** 2
+        return (self.__size ** 2)
+
+    @property
+    def size(self):  # method to retrieve squares size
+        return self.__size
+
+    @size.setter
+    def size(self, value):  # method to set/change squares size
+        if type(value) != int:
+            raise TypeError("size must be an integer")
+        if value < 0:
+            raise ValueError("size must be >= 0")
+        else:
+            self.__size = value
