@@ -1,13 +1,7 @@
 #!/usr/bin/python3
-i, j = 0, 0
-
-
-while i <= 9:
-    while j <= 9:
-        if (i < j) & (i < 8):
-            print("{}{}".format(i, j), end=', ')
-        elif ((i == 8) & (j == 9)):
-            print("{}{}".format(i, j), end='\n')
-        j += 1
-    i += 1
-    j = 0
+for j in range(10):
+    for e in range(j + 1, 10):
+        if (j == 8 and e == 9):
+            print("{:d}{:d}".format(j, e))
+        else:
+            print("{:d}{:d}".format(j, e), end=', ')
