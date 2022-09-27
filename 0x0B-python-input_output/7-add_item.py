@@ -1,20 +1,23 @@
 #!/usr/bin/python3
-"""
-    will add all arguments to the Python list,
-    then save them to the file in JSON format
-"""
-import sys
-save_json = __import__("5-save_to_json_file").save_to_json_file
-load_json = __import__("6-load_from_json_file").load_from_json_file
+"""adds cmd line args to a Python list & saves them to file"""
 
-FILE = "add_item.json"
+
+import sys  # module needed to retrieve cmd line args
+import json  # importing just in case following imports need it
+
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+
+load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
 try:
-    my_list = load_json(FILE)
-except (FileNotFoundError, TypeError):
-    my_list = []
+    # will load arguments or create an empty list
+    pylist = load_from_json_file("add_item.json")
+except(TypeError, FileNotFoundError):
+    pylist = []  # if the load function fails it creates empty list
 
-for i in sys.argv[1:]:
-    my_list.append(i)
+# so now we can add
+for arg in sys.argv[1:]:  # is starting at 1st arg loop thru args
+    pylist.append(arg)  # just adds the arguments to the list
 
-save_json(my_list, FILE)
+# when the list has been created its time to save it
+save_to_json_file(pylist, "add_item.json")
