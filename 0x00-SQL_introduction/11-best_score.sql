@@ -1,0 +1,3 @@
+-- lists records with score >= 10 in table second_table of database
+-- lists all records fitting a conditon
+SELECT score, name FROM second_table WHERE score >= 10 ORDER BY score DESC
