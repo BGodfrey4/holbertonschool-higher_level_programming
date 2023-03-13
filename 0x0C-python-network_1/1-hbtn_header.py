@@ -1,20 +1,15 @@
 #!/usr/bin/python3
 """
-script will send a post request to given url and email & displays decoded
-body of the response
+get id
 """
-from urllib.request import urlopen, Request
-from urllib.parse import urlencode
-from sys import argv
 
 
 if __name__ == '__main__':
-    givenurl = argv[1]
-    email = argv[2]
-    datadict = {'email': email}
-    encodeddata = urlencode(datadict)
-    utf8data = encodeddata.encode("utf-8")
+    import urllib.request
+    import urllib.parse
+    import sys
 
-    with urlopen(givenurl, data=utf8data) as response:
-        body = response.read()
-        print(body.decode("utf-8"))
+    with urllib.request.urlopen(sys.argv[1]) as reply:
+        html = reply.info()
+        print('{}'.format(html.get('X-Request-ID')))
+
