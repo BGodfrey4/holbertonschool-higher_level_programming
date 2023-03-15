@@ -1,16 +1,13 @@
 #!/usr/bin/python3
-"""script takes care of HTTPerror, requests from a url t0 display body of response"""
-from urllib.request import urlopen
-from urllib.error import HTTPError
-from sys import argv
-
-
-if __name__ == '__main__':
-    givenurl = argv[1]
+""" """
+import sys
+import urllib.error
+import urllib.request
+if __name__ == "__main__":
+    url = sys.argv[1]
+    request = urllib.request.Request(url)
     try:
-        with urlopen(givenurl) as response:
-            body = response.read()
-            decodedbody = body.decode("utf-8")
-            print(decodedbody)
-    except HTTPError as error:
-        print("Error code: {}".format(error.code))
+        with urllib.request.urlopen(request) as response:
+            print(response.read().decode("ascii"))
+    except urllib.error.HTTPError as e:
+        print("Error code: {}".format(e.code))

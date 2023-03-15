@@ -1,15 +1,15 @@
 #!/usr/bin/python3
-"""script requests of givenurl & outputs body of response w/ errorhandling"""
+"""This code checks the status code of a URL that is passed
+in as an argument. If the status code is 400 or higher, it prints
+an error message with the status code. If the status code
+is lower than 400, it prints out the text from the URL.
+"""
 import sys
 import requests
-
-
 if __name__ == "__main__":
     url = sys.argv[1]
-
-    r = requests.get(url)
-    if r.status_code >= 400:
-        print("Error code: {}".format(r.status_code))
+    req = requests.get(url)
+    if req.status_code >= 400:
+        print("Error code: {}".format(req.status_code))
     else:
-        print(r.text)
-
+        print(req.text)
