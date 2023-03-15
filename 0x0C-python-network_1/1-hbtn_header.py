@@ -1,15 +1,6 @@
 #!/usr/bin/python3
-"""
-get id
-"""
-
-
-if __name__ == '__main__':
-    import urllib.request
-    import urllib.parse
-    import sys
-
-    with urllib.request.urlopen(sys.argv[1]) as reply:
-        html = reply.info()
-        print('{}'.format(html.get('X-Request-ID')))
-
+""""""
+import sysimport urllib.request
+if _name_ == "_main_":    url = sys.argv[1]
+    with urllib.request.urlopen(url) as response:        headers = response.info()        x_request_id = headers['X-Request-Id']
+    print(x_request_id)
