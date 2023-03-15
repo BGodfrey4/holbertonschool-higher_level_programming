@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" """
+"""script manages HTTP error request from url argument
+to display body of response"""
 import sys
 import urllib.error
 import urllib.request
