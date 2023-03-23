@@ -6,6 +6,7 @@ from the response.
 """
 import requests
 from sys import argv
+
 if __name__ == '__main__':
     givenurl = argv[1]
     response = requests.get(givenurl)
